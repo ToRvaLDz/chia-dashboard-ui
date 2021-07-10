@@ -19,6 +19,7 @@ export class StateService {
   public bestBlockchainState: any = null;
   public bestBlockchainStateFlax: any = null;
   public bestBlockchainStateChaingreen: any = null;
+  public bestBlockchainStateGoji: any = null;
   public bestBlockchainStateSpare: any = null;
   private updateSatellitesInterval: any;
   private updateRatesInterval: any;
@@ -269,6 +270,29 @@ export class StateService {
     }, null);
   }
 
+  getBestBlockchainStateGoji() {
+    let list = [];
+    this.satellites.map((satellite) => {
+      if (satellite.coin == 'Goji') {
+        list.push(satellite);
+      }
+    });
+    return list.reduce((bestBlockchainState, satellite) => {
+      if (!satellite.services
+        || !satellite.services.fullNode
+        || !satellite.services.fullNode.stats
+        || !satellite.services.fullNode.stats.blockchainState
+      ) {
+        return bestBlockchainState;
+      }
+      if (!bestBlockchainState || satellite.services.fullNode.stats.blockchainState.syncStatus.syncedHeight > bestBlockchainState.syncStatus.syncedHeight) {
+        return satellite.services.fullNode.stats.blockchainState;
+      }
+
+      return bestBlockchainState;
+    }, null);
+  }
+
   getBestBlockchainStateSpare() {
     let list = [];
     this.satellites.map((satellite) => {
@@ -306,6 +330,7 @@ export class StateService {
     this.bestBlockchainState = this.getBestBlockchainState();
     this.bestBlockchainStateFlax = this.getBestBlockchainStateFlax();
     this.bestBlockchainStateChaingreen = this.getBestBlockchainStateChaingreen();
+    this.bestBlockchainStateGoji = this.getBestBlockchainStateGoji();
     this.bestBlockchainStateSpare = this.getBestBlockchainStateSpare();
     this.updateStatsFromSatellites('wallets', 'wallet');
     this.updateStatsFromSatellites('fullNodes', 'fullNode');

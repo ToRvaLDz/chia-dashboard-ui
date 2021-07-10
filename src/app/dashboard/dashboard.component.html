@@ -18,6 +18,10 @@
   <app-download-links></app-download-links>
 </div>
 <div class="d-flex justify-content-center" style="padding-top: 2rem"
+  *ngIf="!isInitialLoading && selectedDashboard === 'Goji' && satellitesGojiCount === 0 && !shareKey">
+  <app-download-links></app-download-links>
+</div>
+<div class="d-flex justify-content-center" style="padding-top: 2rem"
   *ngIf="!isInitialLoading && selectedDashboard === 'Spare' && satellitesSpareCount === 0 && !shareKey">
   <app-download-links></app-download-links>
 </div>
@@ -52,6 +56,15 @@
     <app-wallet-summary-chaingreen *ngIf="selectedDashboard === 'Chaingreen' || selectedDashboard === 'All'" [wallets]="wallets('Chaingreen')" [bestBlockchainState]="bestBlockchainStateChaingreen" [rate]="rate"
       [selectedCurrency]="selectedCurrency" [selectedDashboard]="selectedDashboard" class="p-1 col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-6">
     </app-wallet-summary-chaingreen>
+  </div>
+  <div class="row" *ngIf="satellitesGojiCount > 0">
+    <app-farm-summary-goji *ngIf="selectedDashboard === 'Goji' || selectedDashboard === 'All'" [wallets]="wallets('Goji')" [fullNodes]="fullNodes('Goji')" [harvesters]="harvesters('Goji')" [farmers]="farmers('Goji')"
+                                 [bestBlockchainState]="bestBlockchainStateGoji" [rate]="rate" [selectedCurrency]="selectedCurrency" [selectedDashboard]="selectedDashboard"
+                                 class="p-1 col-12 col-md-6 col-lg-8 col-xl-8 col-xxl-18">
+    </app-farm-summary-goji>
+    <app-wallet-summary-goji *ngIf="selectedDashboard === 'Goji' || selectedDashboard === 'All'" [wallets]="wallets('Goji')" [bestBlockchainState]="bestBlockchainStateGoji" [rate]="rate"
+                                   [selectedCurrency]="selectedCurrency" [selectedDashboard]="selectedDashboard" class="p-1 col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-6">
+    </app-wallet-summary-goji>
   </div>
   <div class="row" *ngIf="satellitesSpareCount > 0">
     <app-farm-summary-spare *ngIf="selectedDashboard === 'Spare' || selectedDashboard === 'All'" [wallets]="wallets('Spare')" [fullNodes]="fullNodes('Spare')" [harvesters]="harvesters('Spare')" [farmers]="farmers('Spare')"

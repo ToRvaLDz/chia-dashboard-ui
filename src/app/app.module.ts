@@ -49,9 +49,11 @@ import { SortablejsModule } from 'ngx-sortablejs';
 import { DataTablesModule } from "angular-datatables";
 import { FarmSummaryFlaxComponent } from './farm-summary-flax/farm-summary-flax.component';
 import { FarmSummaryChaingreenComponent } from './farm-summary-chaingreen/farm-summary-chaingreen.component';
+import { FarmSummaryGojiComponent } from './farm-summary-goji/farm-summary-goji.component';
 import { FarmSummarySpareComponent } from './farm-summary-spare/farm-summary-spare.component';
 import { WalletSummaryFlaxComponent } from './wallet-summary-flax/wallet-summary-flax.component';
 import { WalletSummaryChaingreenComponent } from './wallet-summary-chaingreen/wallet-summary-chaingreen.component';
+import { WalletSummaryGojiComponent } from './wallet-summary-goji/wallet-summary-goji.component';
 import { WalletSummarySpareComponent } from './wallet-summary-spare/wallet-summary-spare.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 
@@ -89,9 +91,11 @@ import { DownloadsComponent } from './downloads/downloads.component';
     AccountDashboardSettingsComponent,
     FarmSummaryFlaxComponent,
     FarmSummaryChaingreenComponent,
+    FarmSummaryGojiComponent,
     FarmSummarySpareComponent,
     WalletSummaryFlaxComponent,
     WalletSummaryChaingreenComponent,
+    WalletSummaryGojiComponent,
     WalletSummarySpareComponent,
     DownloadsComponent
   ],

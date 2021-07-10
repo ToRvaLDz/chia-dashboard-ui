@@ -34,7 +34,7 @@ export class HarvestersComponent implements OnInit {
   get isInitialLoading() {
     return this.stateService.isInitialLoading;
   }
-  
+
   get harvesters() {
     return this.stateService.harvesters;
   }
@@ -49,6 +49,10 @@ export class HarvestersComponent implements OnInit {
 
   get bestBlockchainStateChaingreen() {
     return this.stateService.bestBlockchainStateChaingreen;
+  }
+
+  get bestBlockchainStateGoji() {
+    return this.stateService.bestBlockchainStateGoji;
   }
 
   get bestBlockchainStateSpare() {

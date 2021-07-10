@@ -3,6 +3,7 @@
     <img *ngIf="selectedDashboard === 'Chia' || selectedDashboard === 'All'" src="assets/chia_logo.svg" height="32">
       <img *ngIf="selectedDashboard === 'Flax'" src="assets/flax_logo.png" height="32" class>
       <img *ngIf="selectedDashboard === 'Chaingreen'" src="assets/chaingreen_logo.png" height="32" class>
+      <img *ngIf="selectedDashboard === 'Goji'" src="assets/goji_icon.png" height="20" class="float-right">
       <img *ngIf="selectedDashboard === 'Spare'" src="assets/spare_logo.png" height="32">
     <span style="margin-left: 10px; vertical-align: bottom;">Dashboard</span>
   </a>
@@ -79,7 +80,7 @@
           </button>
           <button ngbDropdownItem routerLink="downloads" routerLinkActive="active">
             Downloads
-          </button> 
+          </button>
           <button ngbDropdownItem routerLink="account/dashboardsettings" routerLinkActive="active">
             Account Settings
           </button>
