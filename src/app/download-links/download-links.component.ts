@@ -24,6 +24,9 @@ export class DownloadLinksComponent implements OnInit {
   get binaryDownloadUrlChaingreen() {
     return 'https://github.com/thauch/chaingreen-dashboard-satellite/releases/latest';
   }
+  get binaryDownloadUrlGoji() {
+    return 'https://github.com/thauch/goji-dashboard-satellite/releases/latest';
+  }
   get binaryDownloadUrlSpare() {
     return 'https://github.com/thauch/spare-dashboard-satellite/releases/latest';
   }
