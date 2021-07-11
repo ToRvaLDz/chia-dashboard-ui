@@ -85,7 +85,7 @@
     <ng-container *ngIf="visibleGroups()['Harvesters']">
       <app-harvester [style.order]="satelliteOrder().harvester"
         *ngFor="let harvester of harvesters(selectedDashboard) | orderBy: 'satelliteName'; trackBy: trackBy" [harvester]="harvester"
-        [bestBlockchainState]="bestBlockchainState" [bestBlockchainStateFlax]="bestBlockchainStateFlax" [bestBlockchainStateChaingreen]="bestBlockchainStateChaingreen" [bestBlockchainStateSpare]="bestBlockchainStateSpare" [selectedDashboard]="selectedDashboard" class="p-1 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-4">
+        [bestBlockchainState]="bestBlockchainState" [bestBlockchainStateFlax]="bestBlockchainStateFlax" [bestBlockchainStateChaingreen]="bestBlockchainStateChaingreen" [bestBlockchainStateGoji]="bestBlockchainStateGoji"  [bestBlockchainStateSpare]="bestBlockchainStateSpare" [selectedDashboard]="selectedDashboard" class="p-1 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-4">
       </app-harvester>
     </ng-container>
     <ng-container *ngIf="visibleGroups()['Farmers']">
