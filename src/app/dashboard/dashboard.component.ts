@@ -115,7 +115,7 @@ export class DashboardComponent implements OnInit {
   }
 
   get bestBlockchainStateGoji() {
-    return this.stateService.bestBlockchainStateChaingreen;
+    return this.stateService.bestBlockchainStateGoji;
   }
 
   get bestBlockchainStateSpare() {
@@ -159,7 +159,7 @@ export class DashboardComponent implements OnInit {
   get satellitesGojiCount() {
     let count = 0;
     this.stateService.satellites.map((satellite) => {
-      if (satellite.coin == 'Chaingreen') {
+      if (satellite.coin == 'Goji') {
         count += 1;
       }
     })

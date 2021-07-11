@@ -131,7 +131,7 @@ export class FarmSummaryGojiComponent implements OnInit {
       return 'N/A';
     }
 
-    return `≈ ${dailyReward.toFixed(2)} CGN`;
+    return `≈ ${dailyReward.toFixed(2)} XGJ`;
   }
 
   get dailyRewardXcBighNumber() {
